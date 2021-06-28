@@ -13,6 +13,11 @@ public class Main {
         //System.out.println(doArithmetic(firstValue, secondValue, operator));
         System.out.println(compare(firstValue, secondValue, operator));
 
+        double six = 6;
+
+        six = six + compare(3, 7, "max");
+        System.out.println(six);
+
     }
 
     public static double doArithmetic (double firstNr, double secondNr, String operator) {
