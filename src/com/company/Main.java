@@ -8,10 +8,10 @@ public class Main {
 
         firstValue = 3;
         secondValue = 7;
-        String operator = "+";
+        String operator = "max";
 
         //System.out.println(doArithmetic(firstValue, secondValue, operator));
-        System.out.println(compare(firstValue, secondValue));
+        System.out.println(compare(firstValue, secondValue, operator));
 
     }
 
@@ -39,24 +39,20 @@ public class Main {
         return answer;
     }
 
-    public static double compare (double firstNr, double secondNr) {
-        double maxNr = 0;
-        double minNr = 0;
+    public static double compare (double firstNr, double secondNr, String operator) {
+        double answer = 0;
 
-        if (firstNr > secondNr) {
-            maxNr = firstNr;
-            minNr = secondNr;
-            System.out.println("Maximum number is " + maxNr + ". " + "Minimum number is " + minNr + ".");
+        switch (operator) {
+            case "min":
+                answer = Math.min(firstNr, secondNr);
+                return answer;
+            case "max":
+                answer = Math.max(firstNr, secondNr);
+                return answer;
+            default:
+                System.out.println("Enter a valid operator");
+                return answer;
         }
-        else if (secondNr > firstNr) {
-            maxNr = secondNr;
-            minNr = firstNr;
-            System.out.println("Maximum number is " + maxNr + ". " + "Minimum number is " + minNr + ".");
-        }
-        else if (firstNr == secondNr) {
-            System.out.println("Entered numbers are equal");
-        }
-        return maxNr;
 
     }
 
